@@ -9,14 +9,22 @@
 int mode;
 extern int num_std;
 void MODE(){
-   // write_student_count(num_std);
+    write_student_count(num_std);
     read_student_count();
     lst = (student*)malloc(300*sizeof(student));
+    if(num_std==0)
+    {
+        FILE *fp;
+        fp= fopen("student.txt","a");
+        if (fp==NULL)
+            printf("error opening the file");
+        fclose(fp);
+    }
     ReadStudentFile();
     adminpass *ad;
     ad = (adminpass *)malloc(sizeof(adminpass));
     ad->password = "1234";
-   //add_admin_pass(ad);   //run for the first excution only
+   add_admin_pass(ad);   //run for the first excution only
     read_admin_pass(ad);
 
     do{
