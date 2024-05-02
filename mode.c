@@ -24,7 +24,7 @@ void MODE(){
     adminpass *ad;
     ad = (adminpass *)malloc(sizeof(adminpass));
     ad->password = "1234";
-   add_admin_pass(ad);   //run for the first excution only
+   //add_admin_pass(ad);   //run for the first excution only
     read_admin_pass(ad);
 
     do{
